@@ -9,12 +9,17 @@ interface LayoutProps {
 
 const Layout = (props: LayoutProps) => {
   return (
-      <div>
+      <div className={`
+        flex h-screen w-screen
+        
+      `}>
         <MenuLateral/>
-        <Cabecalho titulo={props.titulo} subtitulo={props.subtitulo}/> 
-        <Conteudo>
-          {props.children}
-        </Conteudo>
+        <div className={"flex w-full p-7 flex-col bg-gray-300 dark:bg-gray-800"}>
+          <Cabecalho titulo={props.titulo} subtitulo={props.subtitulo}/> 
+          <Conteudo>
+            {props.children}
+          </Conteudo>
+        </div>
       </div>
   );
 };
